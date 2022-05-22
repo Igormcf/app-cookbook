@@ -9,6 +9,7 @@ import { renderIngredients,
   renderFootBtn, btnFavLocal, getLocalFav,
   deleteLocalFav, localDoneRecipes, localInProgress } from '../Helpers';
 
+
 function DetailDrink() {
   const [foodDetail, setFoodDetail] = useState();
   const [recomFood, setRecomFood] = useState();
