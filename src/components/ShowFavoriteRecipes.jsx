@@ -14,8 +14,6 @@ function ShowFavoriteRecipes() {
   useEffect(() => {
     const local = JSON.parse(localStorage.getItem('favoriteRecipes'));
     setAll(local);
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const favButton = useCallback((id) => {

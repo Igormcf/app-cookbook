@@ -33,8 +33,8 @@ function Login() {
       <section className="clip" />
       <section className="section-form">
         <img src={ logo } alt="logo" className="img-logo" />
-        <h1>Login</h1>
         <form className="form">
+          <h1>Login</h1>
           <input
             className="input-login"
             type="email"
