@@ -308,6 +308,7 @@
   
   .input-login {
     font-family: mufflu;
+    font-size: 1.1em;
     background: none;
     border: 2px solid var(--preto);
     border-radius: 8px;
@@ -320,10 +321,11 @@
   input::placeholder {
     color: var(--preto);
     padding-left: 8px;
+    font-size: 1.1em;
   }
   
   .img-logo {
-    height: 20rem;
+    height: 30em;
     margin-bottom: 20px;
   }
 }
