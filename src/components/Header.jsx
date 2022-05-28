@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import profileIcon from '../images/profileIcon.svg';
+import profileIcon from '../images/profileIcon.png';
 import searchIcon from '../images/searchIcon.svg';
 import Context from '../Context/Context';
 import '../CSS/Header.css';
@@ -81,19 +81,19 @@ function Header({ showIcon, titleHeader }) {
   };
 
   return (
-    <header className="container">
+    <div className="container-header">
       <Link
         to="/profile"
       >
         <img
-          className="icons"
+          className="icons-1"
           data-testid="profile-top-btn"
           src={ profileIcon }
           alt="ícone"
         />
       </Link>
 
-      <h2 data-testid="page-title">{ titleHeader }</h2>
+      <h2 data-testid="page-title" className='page-title'>{ titleHeader }</h2>
 
       { showIcon ? (
         <button
@@ -102,6 +102,7 @@ function Header({ showIcon, titleHeader }) {
           onClick={ () => { setSearch((a) => !a); } }
         >
           <img
+            className="icons-2"
             data-testid="search-top-btn"
             src={ searchIcon }
             alt="explore"
@@ -119,7 +120,7 @@ function Header({ showIcon, titleHeader }) {
             onChange={ ({ target }) => { setValueInput(target.value); } }
           />
 
-          <div>
+          <div className='conatiner-radios'>
             <label htmlFor="ingredient" className="radioControl">
               <input
                 type="radio"
@@ -164,7 +165,7 @@ function Header({ showIcon, titleHeader }) {
           </button>
         </div>
       ) : undefined}
-    </header>
+    </div>
   );
 }
 

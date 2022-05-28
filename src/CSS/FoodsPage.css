@@ -1,0 +1,36 @@
+@font-face {
+  font-family: mufflu;
+  font-weight: 100;
+  src: local(mufflu), url('../fonts/mufflu.otf') format('opentype');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: mufflu;
+}
+
+:root {
+
+  --azul-claro: #f3fbfb;
+
+  --azul: #bae8e8;
+
+  --amarelo: #ffd803;
+
+  --preto: #272343;
+
+}
+
+.body-food-page {
+  background: var(--azul-claro);
+}
+
+.main-food-page {
+  margin-top: 1em;
+}
+
+.main-food-page img {
+  width: 10em;
+}
