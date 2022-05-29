@@ -23,14 +23,75 @@
 
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+  background: var(--azul-claro);
+}
+
 .body-food-page {
   background: var(--azul-claro);
+  margin: 0 0 90px;
 }
 
 .main-food-page {
   margin-top: 1em;
 }
 
-.main-food-page img {
-  width: 10em;
+/* Para desktops / telas grandes */
+@media only screen and (min-width: 1025px)
+{
+  .section-btns {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .btn-categories {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    width: 7em;
+    border-radius: 7px;
+    border: 3px solid var(--preto);
+    color: var(--preto);
+    background-color: var(--azul);
+    padding-top: 0.2em;
+  }
+
+  .btn-categories:active {
+    background-color: var(--preto);
+    color: var(--azul-claro);
+  }
+
+  .div-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10em;
+    margin-top: 2em;
+  }
+
+  .img-recipe {
+    width: 30em;
+    border-radius: 0 70px 0 0;
+  }
+
+  .div-p {
+    background-color: var(--azul);
+    color: var(--preto);
+    font-size: 2em;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content:end;
+    border-radius: 0 0 0 60px;
+  }
+
+  .div-p p {
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+  }
 }

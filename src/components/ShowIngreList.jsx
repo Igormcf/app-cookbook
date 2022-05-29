@@ -26,7 +26,6 @@ function ShowIngreList() {
                 to={ `/foods/${recipe.idMeal}` }
               >
                 <img
-                  /* className='img-recipe' */
                   data-testid={ `${index}-card-img` }
                   src={ recipe.strMealThumb }
                   alt={ recipe.strMeal }
@@ -58,7 +57,6 @@ function ShowIngreList() {
                 to={ `/foods/${recipe.idDrink}` }
               >
                 <img
-                  /* className='img-recipe' */
                   data-testid={ `${index}-card-img` }
                   src={ recipe.strDrinkThumb }
                   alt={ recipe.strDrink }

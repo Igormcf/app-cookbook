@@ -1,14 +1,84 @@
-.footer {
-  bottom: 0;
-  display: flex;
-  justify-content: space-evenly;
-  position: fixed;
-  text-align: center;
-  width: 100%;
+:root {
+
+  --azul-claro: #f3fbfb;
+
+  --azul: #bae8e8;
+
+  --amarelo: #ffd803;
+
+  --preto: #272343;
+
 }
 
-.footer-icon {
-  background-image: linear-gradient(#3c735f, #f2cb05);
-  border-radius: 50%;
-  padding: 15px;
+/* Para desktops / telas grandes */
+@media only screen and (min-width: 1025px)
+{
+  .container-footer {
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: var(--preto);
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+/* Para telas pequena / laptops */
+@media only screen and (max-width: 1024px)
+{
+  .container-footer {
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: var(--preto);
+    padding: 0.5em;
+  }
+
+  .footer-icon {
+    width: 3em;
+  }
+}
+
+/* Para Tablet */
+@media only screen and (max-width: 768px)
+{
+  .container-footer {
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: var(--preto);
+    padding: 0.3em;
+  }
+
+  .footer-icon {
+    width: 2.8em;
+  }
+}
+
+/* Para mobile */
+@media only screen and (max-width: 600px)
+{
+  .container-footer {
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: var(--preto);
+    padding: 0.3em;
+  }
+
+  .footer-icon {
+    width: 2.3em;
+  }
 }

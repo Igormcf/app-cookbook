@@ -17,7 +17,7 @@ function Foods() {
       <main className='main-food-page'>
         { ingreOn ? <ShowIngreList /> : <ShowList titleHeader="Foods" /> }
       </main>
-      <footer>
+      <footer className='footer-food-page'>
         <Footer />
       </footer>
     </body>

@@ -1,8 +1,5 @@
 import React from 'react';
 import '../CSS/Loading.css';
-/* import { GiCakeSlice } from 'react-icons/gi';
-import { IoMdWine } from 'react-icons/io';
-import { GiHamburger } from 'react-icons/gi'; */
 import burger from '../images/burger.png';
 import drink from '../images/drink.png';
 import massa from '../images/massa.png';

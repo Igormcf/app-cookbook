@@ -96,6 +96,7 @@ function ShowList({ titleHeader }) {
     if (category) {
       return category.map(({ strCategory }) => (
         <button
+          className='btn-categories'
           type="button"
           key={ strCategory }
           name={ strCategory }
@@ -133,6 +134,7 @@ function ShowList({ titleHeader }) {
         }
         return list12.map((recipe, index) => (
           <div
+            className='div-card'
             data-testid={ `${index}-recipe-card` }
             key={ recipe.strMeal }
           >
@@ -140,16 +142,18 @@ function ShowList({ titleHeader }) {
               to={ `/foods/${recipe.idMeal}` }
             >
               <img
+                className='img-recipe'
                 data-testid={ `${index}-card-img` }
                 src={ recipe.strMealThumb }
                 alt={ recipe.strMeal }
               />
-
-              <p
-                data-testid={ `${index}-card-name` }
-              >
-                { recipe.strMeal }
-              </p>
+              <div className='div-p'>
+                <p
+                  data-testid={ `${index}-card-name` }
+                >
+                  { recipe.strMeal }
+                </p>
+              </div>
             </Link>
           </div>
         ));
@@ -160,6 +164,7 @@ function ShowList({ titleHeader }) {
         }
         return (list12.map((recipe, index) => (
           <div
+            className='div-card'
             data-testid={ `${index}-recipe-card` }
             key={ recipe.strDrink }
           >
@@ -167,16 +172,18 @@ function ShowList({ titleHeader }) {
               to={ `/drinks/${recipe.idDrink}` }
             >
               <img
+                className='img-recipe'
                 data-testid={ `${index}-card-img` }
                 src={ recipe.strDrinkThumb }
                 alt={ recipe.strDrink }
               />
-
-              <p
-                data-testid={ `${index}-card-name` }
-              >
-                { recipe.strDrink }
-              </p>
+              <div className='div-p'>
+                <p
+                  data-testid={ `${index}-card-name` }
+                >
+                  { recipe.strDrink }
+                </p>
+              </div>
             </Link>
           </div>
         )));
@@ -187,19 +194,23 @@ function ShowList({ titleHeader }) {
   // ir pra main
 
   return (
-    <main>
-      { renderCategory() }
+    <div className='container-btn-cards'>
+      <section className='section-btns'>
+        { renderCategory() }
 
-      <button
-        data-testid="All-category-filter"
-        type="button"
-        onClick={ () => { getAPIStandard(titleHeader); } }
-      >
-        All
-      </button>
-
-      { renderCards() }
-    </main>
+        <button
+          className='btn-categories'
+          data-testid="All-category-filter"
+          type="button"
+          onClick={ () => { getAPIStandard(titleHeader); } }
+        >
+          All
+        </button>
+      </section>
+      <div className='div-cards'>
+        { renderCards() }
+      </div>
+    </div>
   );
 }
 
