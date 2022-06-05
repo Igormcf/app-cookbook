@@ -81,7 +81,7 @@ function Header({ showIcon, titleHeader }) {
   };
 
   return (
-    <div className="container-header">
+    <div className="container-header" id='container-header'>
       <Link
         to="/profile"
       >

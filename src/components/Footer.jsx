@@ -1,12 +1,12 @@
 import React from 'react';
-import DrinkIcon from '../images/drinkIcon.svg';
-import ExploreIcon from '../images/exploreIcon.svg';
-import MealIcon from '../images/mealIcon.svg';
+import DrinkIcon from '../images/drinkIcon.png';
+import ExploreIcon from '../images/exploreIcon.png';
+import MealIcon from '../images/mealIcon.png';
 import '../CSS/Footer.css';
 
 function Footer() {
   return (
-    <footer className="footer" data-testid="footer">
+    <footer className="container-footer" data-testid="footer">
       <a href="/drinks">
         <img
           className="footer-icon"
