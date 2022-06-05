@@ -32,6 +32,7 @@ html {
   position: relative;
   min-height: 100%;
   background: var(--azul-claro);
+  scroll-behavior: smooth;
 }
 
 .body-food-page {
@@ -104,5 +105,14 @@ html {
   .div-p p {
     padding-top: 0.5em;
     padding-right: 0.5em;
+  }
+
+  .section-a {
+    display: flex;
+    justify-content: right;
+  }
+
+  .section-a img {
+    margin-right: 10px;
   }
 }
