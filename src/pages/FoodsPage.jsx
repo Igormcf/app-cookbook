@@ -5,7 +5,6 @@ import Footer from '../components/Footer';
 import Context from '../Context/Context';
 import ShowIngreList from '../components/ShowIngreList';
 import topo from '../images/topo.png';
-import { Link } from 'react-router-dom';
 import '../CSS/FoodsPage.css';
 
 function Foods() {

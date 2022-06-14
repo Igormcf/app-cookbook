@@ -97,6 +97,7 @@ html {
     font-size: 2em;
     font-weight: 800;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content:end;
     border-radius: 0 0 0 60px;
@@ -109,10 +110,15 @@ html {
 
   .section-a {
     display: flex;
+    border-radius: 50px;
     justify-content: right;
   }
 
   .section-a img {
     margin-right: 10px;
+  }
+
+  .seta-img:hover {
+    width: 4em;
   }
 }
