@@ -81,6 +81,10 @@ html {
     margin-top: 2em;
   }
 
+  .div-card {
+    max-width: 480px;
+  }
+
   .div-card:hover {
     border-radius: 0 74px 0 64px;
     border: 3px solid var(--preto);
@@ -88,14 +92,14 @@ html {
   }
 
   .img-recipe {
-    width: 30em;
+    width: 28.7em;
     border-radius: 0 70px 0 0;
   }
 
   .div-p {
     background-color: var(--azul);
     color: var(--preto);
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 800;
     display: flex;
     flex-wrap: wrap;
