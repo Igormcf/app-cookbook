@@ -48,9 +48,9 @@ html {
 @media only screen and (min-width: 1025px)
 {
   .section-btns {
-    margin-bottom: 1em;
-    margin-top: 1em;
+    margin: 1em;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
   }
@@ -58,6 +58,7 @@ html {
   .btn-categories {
     font-size: 1.2rem;
     font-weight: 700;
+    margin-top: 5px;
     text-align: center;
     width: 7.5em;
     border-radius: 7px;
@@ -110,12 +111,12 @@ html {
   .div-p p {
     padding-top: 0.5em;
     padding-right: 0.5em;
+    padding-left: 0.5em;
     margin-left: 0.7em;
   }
 
   .section-a {
     display: flex;
-    border-radius: 50px;
     justify-content: right;
   }
 
@@ -125,5 +126,263 @@ html {
 
   .seta-img:hover {
     width: 4em;
+  }
+}
+
+/* Para telas pequena / laptops */
+@media only screen and (max-width: 1024px)
+{
+  .section-btns {
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .btn-categories {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 5px;
+    text-align: center;
+    width: 7.5em;
+    border-radius: 7px;
+    border: 3px solid var(--preto);
+    color: var(--preto);
+    background-color: var(--azul);
+    padding-top: 0.2em;
+  }
+
+  .btn-categories:active {
+    background-color: var(--preto);
+    color: var(--azul-claro);
+  }
+
+  .div-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6em;
+    margin-top: 2em;
+  }
+
+  .div-card {
+    max-width: 290px;
+  }
+
+  .div-card:hover {
+    border-radius: 0 74px 0 64px;
+    border: 3px solid var(--preto);
+    box-shadow: var(--shadow-elevation-medium);
+  }
+
+  .img-recipe {
+    width: 100%;
+    border-radius: 0 70px 0 0;
+  }
+
+  .div-p {
+    background-color: var(--azul);
+    color: var(--preto);
+    font-size: 1em;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content:end;
+    border-radius: 0 0 0 60px;
+  }
+
+  .div-p p {
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    margin-left: 0.7em;
+  }
+
+  .section-a {
+    display: flex;
+    justify-content: right;
+  }
+
+  .section-a img {
+    width: 2.3em;
+    margin-right: 10px;
+  }
+
+  .seta-img:hover {
+    width: 2.6em;
+  }
+}
+
+/* Para Tablet */
+@media only screen and (max-width: 768px)
+{
+  .section-btns {
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .btn-categories {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 5px;
+    text-align: center;
+    width: 7.5em;
+    border-radius: 7px;
+    border: 3px solid var(--preto);
+    color: var(--preto);
+    background-color: var(--azul);
+    padding-top: 0.2em;
+  }
+
+  .btn-categories:active {
+    background-color: var(--preto);
+    color: var(--azul-claro);
+  }
+
+  .div-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+    margin-top: 2em;
+  }
+
+  .div-card {
+    max-width: 260px;
+  }
+
+  .div-card:hover {
+    border-radius: 0 74px 0 64px;
+    border: 3px solid var(--preto);
+    box-shadow: var(--shadow-elevation-medium);
+  }
+
+  .img-recipe {
+    width: 100%;
+    border-radius: 0 70px 0 0;
+  }
+
+  .div-p {
+    background-color: var(--azul);
+    color: var(--preto);
+    font-size: 0.9em;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content:end;
+    border-radius: 0 0 0 60px;
+  }
+
+  .div-p p {
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    margin-left: 0.7em;
+  }
+
+  .section-a {
+    display: flex;
+    justify-content: right;
+  }
+
+  .section-a img {
+    width: 2em;
+    margin-right: 10px;
+  }
+
+  .seta-img:hover {
+    width: 2.3em;
+  }
+}
+
+/* Para mobile */
+@media only screen and (max-width: 600px)
+{
+  .section-btns {
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .btn-categories {
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 5px;
+    text-align: center;
+    width: 7.5em;
+    border-radius: 7px;
+    border: 3px solid var(--preto);
+    color: var(--preto);
+    background-color: var(--azul);
+    padding-top: 0.2em;
+  }
+
+  .btn-categories:active {
+    background-color: var(--preto);
+    color: var(--azul-claro);
+  }
+
+  .div-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.2em;
+    margin-top: 2em;
+  }
+
+  .div-card {
+    max-width: 240px;
+  }
+
+  .div-card:active {
+    border-radius: 0 74px 0 64px;
+    border: 3px solid var(--preto);
+    box-shadow: var(--shadow-elevation-medium);
+  }
+
+  .img-recipe {
+    width: 100%;
+    border-radius: 0 70px 0 0;
+  }
+
+  .div-p {
+    background-color: var(--azul);
+    color: var(--preto);
+    font-size: 0.8em;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content:end;
+    border-radius: 0 0 0 60px;
+  }
+
+  .div-p p {
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    margin-left: 0.7em;
+  }
+
+  .section-a {
+    display: flex;
+    justify-content: right;
+  }
+
+  .section-a img {
+    width: 2em;
+    margin-right: 10px;
+  }
+
+  .seta-img:active {
+    width: 2.3em;
   }
 }
