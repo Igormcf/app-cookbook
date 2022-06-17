@@ -62,9 +62,9 @@
     font-family: mufflu;
     font-weight: 900;
     font-size: 16px !important;
-    height: 40px !important;
+    height: 35px !important;
     text-align: center;
-    width: 90px !important;
+    width: 255px !important;
   }
 
   h1 {
@@ -138,9 +138,9 @@
     font-family: mufflu;
     font-size: 18px;
     font-weight: 900;
-    height: 40px;
+    height: 38px;
     text-align: center;
-    width: 95px;
+    width: 280px;
   }
 
   h1 {
@@ -214,9 +214,9 @@
     font-family: mufflu;
     font-size: 18px;
     font-weight: 900;
-    height: 40px;
+    height: 38px;
     text-align: center;
-    width: 95px;
+    width: 280px;
   }
 
   h1 {
@@ -288,11 +288,11 @@
     color: var(--amarelo);
     background: var(--preto);
     font-family: mufflu;
-    font-size: 18px;
+    font-size: 23px;
     font-weight: 900;
-    height: 40px;
+    height: 38px;
     text-align: center;
-    width: 95px;
+    width: 280px;
   }
 
   h1 {
