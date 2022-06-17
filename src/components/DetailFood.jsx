@@ -175,7 +175,7 @@ function DetailFood() {
 
               </section>
               <section className='section-intructions'>
-                <h2>instructions</h2>
+                <h2>Instructions</h2>
                 <p data-testid="instructions">
                   {foodItem.strInstructions}
                 </p>
