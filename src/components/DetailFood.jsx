@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import '../CSS/DetailFood.css';
-import ShareIcon from '../images/shareIcon.svg';
-import WhiteHeartIcon from '../images/whiteHeartIcon.svg';
-import BlackHeartIcon from '../images/blackHeartIcon.svg';
+import ShareIcon from '../images/shareIcon.png';
+import WhiteHeartIcon from '../images/whiteHeartIcon.png';
+import BlackHeartIcon from '../images/blackHeartIcon.png';
+import Loading from '../components/Loading';
+import Carousel from 'react-elastic-carousel';
 
 import { renderIngredients,
   renderFootBtn, btnFavLocal, getLocalFav,
   deleteLocalFav, localDoneRecipes, localInProgress } from '../Helpers';
+
+const breakPoints = [
+  { width: 600, itemsToShow: 1 },
+  { width: 768, itemsToShow: 2 },
+  { width: 1024, itemsToShow: 3 }
+];
 
 function DetailFood() {
   const [foodDetail, setFoodDetail] = useState();
@@ -62,31 +70,27 @@ function DetailFood() {
     localInProgress(ids[2], setInProgress);
   }, []);
 
+
   const renderCarousel = () => {
     if (recomFood) {
       return (
-        <div className="container">
-          <div className="divCarouselBigger">
-            { recomFood.map((a, index) => (
-              <div
-                className="divCarousel"
-                key={ index }
-                data-testid={ `${index}-recomendation-card` }
+        <Carousel breakPoints={ breakPoints }>
+          { recomFood.map((a, index) => (
+            <div
+              className="divCarousel"
+              key={ index }
+              data-testid={ `${index}-recomendation-card` }
+            >
+              <img className="imgCarousel" src={ a.strDrinkThumb } alt={ a.strDrink } />
+              <p>{ a.strCategory }</p>
+              <h4
+                data-testid={ `${index}-recomendation-title` }
               >
-                <img className="imgCarousel" src={ a.strDrinkThumb } alt={ a.strDrink } />
-
-                <p className="pCarousel">{ a.strCategory }</p>
-
-                <h4
-                  data-testid={ `${index}-recomendation-title` }
-                  className="h4Carousel"
-                >
-                  { a.strDrink }
-                </h4>
-              </div>
-            )) }
-          </div>
-        </div>
+                { a.strDrink }
+              </h4>
+            </div>
+          )) }
+        </Carousel>
       );
     }
   };
@@ -96,8 +100,6 @@ function DetailFood() {
       .replace('youtube', 'youtube-nocookie');
     return (
       <iframe
-        width="350"
-        height="350"
         src={ url }
         title="video"
         data-testid="video"
@@ -122,68 +124,76 @@ function DetailFood() {
   };
 
   return (
-    <div>
+    <body className='body-detailFood'>
       {foodDetail
         ? ( // true
-          <>
-            <main>
-              <img
-                data-testid="recipe-photo"
-                className="imgFood"
-                src={ foodItem.strMealThumb }
-                alt="food"
-              />
+          <div className='container-detailFood'>
+            <main className='main-detailFood'>
+              <section className="section-info-recipe">
+                <div className="conatiner-img-recipe">
+                  <img
+                    data-testid="recipe-photo"
+                    className="imgFood"
+                    src={ foodItem.strMealThumb }
+                    alt="food"
+                  />
 
-              <h1 data-testid="recipe-title">{foodItem.strMeal}</h1>
+                  <h1 data-testid="recipe-title">{foodItem.strMeal}</h1>
 
-              <button
-                data-testid="share-btn"
-                type="button"
-                onClick={ () => { copyFunc(`http://localhost:3000/foods/${id[2]}`); } }
-              >
-                <img src={ ShareIcon } alt="share-btn" />
-              </button>
+                  <div className="container-btn-detail">
+                    <button
+                      data-testid="share-btn"
+                      type="button"
+                      onClick={ () => { copyFunc(`http://localhost:3000/foods/${id[2]}`); } }
+                    >
+                      <img src={ ShareIcon } alt="share-btn" />
+                    </button>
 
-              <button
-                type="button"
-                onClick={ favButton }
-              >
-                <img
-                  data-testid="favorite-btn"
-                  src={ favStatus ? BlackHeartIcon : WhiteHeartIcon }
-                  alt="fav-icon"
-                />
-              </button>
+                    <button
+                      type="button"
+                      onClick={ favButton }
+                    >
+                      <img
+                        data-testid="favorite-btn"
+                        src={ favStatus ? BlackHeartIcon : WhiteHeartIcon }
+                        alt="fav-icon"
+                      />
+                    </button>
+                  </div>
 
-              { copied ? <p>Link copied!</p> : undefined}
+                  { copied ? <p>Link copied!</p> : undefined}
+                </div>
+                <div className="container-list-ingredients">
+                  <h3 data-testid="recipe-category">{foodItem.strCategory}</h3>
 
-              <h3 data-testid="recipe-category">{foodItem.strCategory}</h3>
+                  <h4>Ingredients</h4>
 
-              <h5>Ingredients</h5>
+                  <ul>
+                    {renderIngredients(foodItem)}
+                  </ul>
+                </div>
 
-              <ul>
-                {renderIngredients(foodItem)}
-              </ul>
-
-              <h3>instructions</h3>
-
-              <p data-testid="instructions">
-                {foodItem.strInstructions}
-              </p>
+              </section>
+              <section className='section-intructions'>
+                <h2>instructions</h2>
+                <p data-testid="instructions">
+                  {foodItem.strInstructions}
+                </p>
+              </section>
 
               {renderVideo(foodItem.strYoutube)}
 
               {renderCarousel()}
 
             </main>
-            <footer className="btnDiv">
+            <footer className='footer-detailFood'>
               { renderFootBtn(done, id[2], inProgress, 'foods') }
             </footer>
-          </>
+          </div>
         ) : (
-          <main>loading</main>
+          <Loading />
         )}
-    </div>
+    </body>
   );
 }
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import ShareIcon from '../images/shareIcon.svg';
-import WhiteHeartIcon from '../images/whiteHeartIcon.svg';
-import BlackHeartIcon from '../images/blackHeartIcon.svg';
+import ShareIcon from '../images/shareIcon.png';
+import WhiteHeartIcon from '../images/whiteHeartIcon.png';
+import BlackHeartIcon from '../images/blackHeartIcon.png';
 import '../CSS/DoneRecipes.css';
 import { deleteLocalFav } from '../Helpers';
 

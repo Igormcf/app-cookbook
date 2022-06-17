@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import '../CSS/DetailFood.css';
-import ShareIcon from '../images/shareIcon.svg';
-import WhiteHeartIcon from '../images/whiteHeartIcon.svg';
-import BlackHeartIcon from '../images/blackHeartIcon.svg';
+import ShareIcon from '../images/shareIcon.png';
+import WhiteHeartIcon from '../images/whiteHeartIcon.png';
+import BlackHeartIcon from '../images/blackHeartIcon.png';
 
 import { renderIngredients,
   renderFootBtn, btnFavLocal, getLocalFav,
