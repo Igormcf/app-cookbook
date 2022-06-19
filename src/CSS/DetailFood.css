@@ -62,6 +62,11 @@ html {
   
   .container-list-ingredients {
     font-size: 1.1em;
+    background-color: var(--preto);
+    color: var(--amarelo);
+    padding: 2em;
+    border-radius: 15px;
+    border: 3px solid var(--amarelo);
   }
   
   .container-list-ingredients h3, h4 {
@@ -81,7 +86,7 @@ html {
     margin-bottom: 2em;
     padding: 3em;
     display: flex;
-    gap: 15em;
+    gap: 10em;
     align-items: center;
     justify-content: center;
   }
@@ -207,6 +212,11 @@ html {
   
   .container-list-ingredients {
     font-size: 1.1em;
+    background-color: var(--preto);
+    color: var(--amarelo);
+    padding: 2em;
+    border-radius: 15px;
+    border: 3px solid var(--amarelo);
   }
   
   .container-list-ingredients h3, h4 {
@@ -226,7 +236,7 @@ html {
     margin-bottom: 2em;
     padding: 2em;
     display: flex;
-    gap: 10em;
+    gap: 6em;
     align-items: center;
     justify-content: center;
   }
@@ -352,6 +362,11 @@ html {
   
   .container-list-ingredients {
     font-size: 1em;
+    background-color: var(--preto);
+    color: var(--amarelo);
+    padding: 2em;
+    border-radius: 15px;
+    border: 3px solid var(--amarelo);
   }
   
   .container-list-ingredients h3, h4 {
@@ -371,7 +386,7 @@ html {
     margin-bottom: 2em;
     padding: 2em;
     display: flex;
-    gap: 5em;
+    gap: 4em;
     align-items: center;
     justify-content: center;
   }
@@ -388,7 +403,7 @@ html {
   }
   
   .imgFood {
-    width: 18em;
+    width: 16em;
     border-radius: 7px;
     box-shadow: var(--shadow-elevation-medium);
   }
@@ -500,6 +515,11 @@ html {
     margin-top: -2em;
     min-width: 100%;
     text-align: center;
+    background-color: var(--preto);
+    color: var(--amarelo);
+    padding: 2em;
+    border-radius: 15px;
+    border: 3px solid var(--amarelo);
   }
 
   .container-list-ingredients li {
