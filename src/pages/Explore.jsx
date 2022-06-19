@@ -2,17 +2,21 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ExploreButtons from './ExploreButtons';
+import '../CSS/Explore.css';
 
 function Explore() {
   return (
-    <>
-      <Header showIcon={ false } titleHeader="Explore" />
-      <div className="explore-main">
+    <body className='body-explore'>
+      <header className='header-explore'>
+        <Header showIcon={ false } titleHeader="Explore" />
+      </header>
+      <main className="main-explore">
         <ExploreButtons />
+      </main>
+      <footer className='footer-explore'>
         <Footer />
-      </div>
-
-    </>
+      </footer>
+    </body>
   );
 }
 

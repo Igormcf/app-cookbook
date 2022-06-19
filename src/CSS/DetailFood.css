@@ -193,11 +193,14 @@ html {
     color: var(--amarelo);
     background: var(--preto);
     box-shadow: var(--shadow-elevation-medium);
+    transition: transform 100ms, box-shadow 100ms;
   }
 
   .footer-detailFood button:active {
     border: 2px solid var(--azul-claro);
-    color: var(--azul-claro)
+    color: var(--azul-claro);
+    transform: translateY(4px) translateX(4px);
+    box-shadow: var(--preto) 0px 0px 0px;
   }
 }
 
@@ -343,11 +346,14 @@ html {
     color: var(--amarelo);
     background: var(--preto);
     box-shadow: var(--shadow-elevation-medium);
+    transition: transform 100ms, box-shadow 100ms;
   }
 
   .footer-detailFood button:active {
     border: 2px solid var(--azul-claro);
-    color: var(--azul-claro)
+    color: var(--azul-claro);
+    transform: translateY(4px) translateX(4px);
+    box-shadow: var(--preto) 0px 0px 0px;
   }
 }
 
@@ -493,11 +499,14 @@ html {
     color: var(--amarelo);
     background: var(--preto);
     box-shadow: var(--shadow-elevation-medium);
+    transition: transform 100ms, box-shadow 100ms;
   }
 
   .footer-detailFood button:active {
     border: 2px solid var(--azul-claro);
-    color: var(--azul-claro)
+    color: var(--azul-claro);
+    transform: translateY(4px) translateX(4px);
+    box-shadow: var(--preto) 0px 0px 0px;
   }
 }
 
@@ -653,10 +662,13 @@ html {
     color: var(--amarelo);
     background: var(--preto);
     box-shadow: var(--shadow-elevation-medium);
+    transition: transform 100ms, box-shadow 100ms;
   }
 
   .footer-detailFood button:active {
     border: 2px solid var(--azul-claro);
-    color: var(--azul-claro)
+    color: var(--azul-claro);;
+    transform: translateY(4px) translateX(4px);
+    box-shadow: var(--preto) 0px 0px 0px;
   }
 }
