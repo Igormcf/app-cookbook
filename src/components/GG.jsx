@@ -4,10 +4,18 @@ import '../CSS/DetailFood.css';
 import ShareIcon from '../images/shareIcon.png';
 import WhiteHeartIcon from '../images/whiteHeartIcon.png';
 import BlackHeartIcon from '../images/blackHeartIcon.png';
+import Carousel from 'react-elastic-carousel';
+import Loading from '../components/Loading';
 
 import {
   renderFootBtn, btnFavLocal, getLocalFav,
   deleteLocalFav, localDoneRecipes, localInProgress } from '../Helpers';
+
+const breakPoints = [
+  { width: 600, itemsToShow: 1 },
+  { width: 768, itemsToShow: 2 },
+  { width: 1024, itemsToShow: 3 }
+];
 
 function GG() {
   const [foodDetail, setFoodDetail] = useState();
@@ -75,28 +83,25 @@ function GG() {
   const renderCarousel = () => {
     if (recomFood) {
       return (
-        <div className="container">
-          <div className="divCarouselBigger">
-            { recomFood.map((a, index) => (
-              <div
-                className="divCarousel"
-                key={ index }
-                data-testid={ `${index}-recomendation-card` }
+        <Carousel breakPoints={ breakPoints }>
+          { recomFood.map((a, index) => (
+            <div
+              className="divCarousel"
+              key={ index }
+              data-testid={ `${index}-recomendation-card` }
+            >
+              <img className="imgCarousel" src={ a.strMealThumb } alt={ a.strMeal } />
+
+              <p>{ a.strCategory }</p>
+
+              <h4
+                data-testid={ `${index}-recomendation-title` }
               >
-                <img className="imgCarousel" src={ a.strMealThumb } alt={ a.strMeal } />
-
-                <p className="pCarousel">{ a.strCategory }</p>
-
-                <h4
-                  data-testid={ `${index}-recomendation-title` }
-                  className="h4Carousel"
-                >
-                  { a.strMeal }
-                </h4>
-              </div>
-            )) }
-          </div>
-        </div>
+                { a.strMeal }
+              </h4>
+            </div>
+          )) }
+        </Carousel>
       );
     }
   };
@@ -116,73 +121,78 @@ function GG() {
   };
 
   return (
-    <div>
+    <body className='body-detailFood'>
       {foodDetail
         ? (
-          <>
-            <main>
-              <img
-                data-testid="recipe-photo"
-                src={ foodItem.strDrinkThumb }
-                alt="food"
-                className="imgFood"
-              />
+          <div className='container-detailFood'>
+            <main className='main-detailFood'>
+              <section className="section-info-recipe">
+                <div className="conatiner-img-recipe">
+                  <img
+                    data-testid="recipe-photo"
+                    src={ foodItem.strDrinkThumb }
+                    alt="food"
+                    className="imgFood"
+                  />
+                  <h1 data-testid="recipe-title">{foodItem.strDrink}</h1>
+                  <div className="container-btn-detail">
+                    <button
+                      data-testid="share-btn"
+                      type="button"
+                      onClick={ () => { copyFunc(`http://localhost:3000/drinks/${id[2]}`); } }
+                    >
+                      <img src={ ShareIcon } alt="share-btn" />
+                    </button>
 
-              <h1 data-testid="recipe-title">{foodItem.strDrink}</h1>
+                    <button
+                      type="button"
+                      onClick={ favButton }
+                    >
+                      <img
+                        data-testid="favorite-btn"
+                        src={ favStatus ? BlackHeartIcon : WhiteHeartIcon }
+                        alt="fav-icon"
+                      />
+                    </button>
+                  </div>
 
-              <button
-                data-testid="share-btn"
-                type="button"
-                onClick={ () => { copyFunc(`http://localhost:3000/drinks/${id[2]}`); } }
-              >
-                <img src={ ShareIcon } alt="share-btn" />
-              </button>
+                  { copied ? <p>Link copied!</p> : undefined}
+                </div>
+                <div className="container-list-ingredients">
+                  <h3
+                    data-testid="recipe-category"
+                  >
+                    {`${foodItem.strCategory} - ${foodItem.strAlcoholic}`}
+                  </h3>
 
-              <button
-                type="button"
-                onClick={ favButton }
-              >
-                <img
-                  data-testid="favorite-btn"
-                  src={ favStatus ? BlackHeartIcon : WhiteHeartIcon }
-                  alt="fav-icon"
-                />
-              </button>
+                  <h4>Ingredients</h4>
 
-              { copied ? <p>Link copied!</p> : undefined}
+                  <ul>
+                    <li>Galliano: 2 1/2 shots</li>
+                    <li>Ginger ale</li>
+                    <li>Ice</li>
+                  </ul>
+                </div>
+              </section>   
+              <section className='section-intructions'>
+                <h2>Instructions</h2>
 
-              <h3
-                data-testid="recipe-category"
-              >
-                {`${foodItem.strCategory} - ${foodItem.strAlcoholic}`}
-              </h3>
-
-              <h5>Ingredients</h5>
-
-              <ul>
-                <li>Galliano: 2 1/2 shots</li>
-                <li>Ginger ale</li>
-                <li>Ice</li>
-              </ul>
-
-              <h3>instructions</h3>
-
-              <p data-testid="instructions">
-                {foodItem.strInstructions}
-              </p>
+                <p data-testid="instructions">
+                  {foodItem.strInstructions}
+                </p>
+              </section>
 
               {renderCarousel()}
 
             </main>
-            <footer className="btnDiv">
+            <footer className='footer-detailFood'>
               { renderFootBtn(done, id[2], inProgress, 'drinks') }
             </footer>
-
-          </>
+          </div>
         ) : (
-          <main>loading</main>
+          <Loading />
         )}
-    </div>
+    </body>
   );
 }
 
