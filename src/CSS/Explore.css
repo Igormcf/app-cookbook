@@ -35,7 +35,7 @@ html {
 }
 
 .body-explore {
-  background: linear-gradient(-45deg, #dafcfc, #f9e7fe);
+  background: var(--preto);
 }
 
 .main-explore {
@@ -63,21 +63,29 @@ html {
     width: 50em;
     border-radius: 20px;
     border: 4px solid var(--amarelo);
-    box-shadow: var(--shadow-elevation-medium);
-    transition: transform 100ms, box-shadow 100ms;
+    background: linear-gradient(-45deg, #272343, #feea76, #272343, #bae8e8);
+    background-size: 800% 400%;
+    transition: all .5s ease-in-out;
+    animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
   }
+
+  @keyframes gradient {
+    0% {
+     background-position: 0% 50%;
+    }
+   
+    50% {
+     background-position: 100% 50%;
+    }
+   
+    100% {
+     background-position: 0% 50%;
+    }
+   }
   
   .container-explore-buttons button:active {
-    transform: translateY(4px) translateX(4px);
-    box-shadow: var(--preto) 0px 0px 0px;
-  }
-
-  .explore-foods {
-    background-image: url("../images/h1-food.jpg");
-  }
-
-  .explore-drinks {
-    background-image: url("../images/h1-drink.jpg")
+    animation: gradient 2s infinite;
+    transform: scale(0.8);
   }
   
   .h1-food, .h1-drink {
@@ -107,21 +115,29 @@ html {
     width: 38em;
     border-radius: 20px;
     border: 4px solid var(--amarelo);
-    box-shadow: var(--shadow-elevation-medium);
-    transition: transform 100ms, box-shadow 100ms;
+    background: linear-gradient(-45deg, #272343, #feea76, #272343, #bae8e8);
+    background-size: 800% 400%;
+    transition: all .5s ease-in-out;
+    animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
   }
+
+  @keyframes gradient {
+    0% {
+     background-position: 0% 50%;
+    }
+   
+    50% {
+     background-position: 100% 50%;
+    }
+   
+    100% {
+     background-position: 0% 50%;
+    }
+   }
   
   .container-explore-buttons button:active {
-    transform: translateY(4px) translateX(4px);
-    box-shadow: var(--preto) 0px 0px 0px;
-  }
-
-  .explore-foods {
-    background-image: url("../images/h1-food.jpg");
-  }
-
-  .explore-drinks {
-    background-image: url("../images/h1-drink.jpg")
+    animation: gradient 2s infinite;
+    transform: scale(0.8);
   }
   
   .h1-food, .h1-drink {
