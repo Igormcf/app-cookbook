@@ -8,7 +8,7 @@ function ExploreButtons() {
     <div className="container-explore-buttons">
       <div className='conatiner-explore-btn-foods'>
         <button
-          className="explore-btn explore-foods"
+          className="explore-btn"
           type="button"
           data-testid="explore-foods"
           onClick={ () => {
@@ -20,7 +20,7 @@ function ExploreButtons() {
       </div>
       <div className='conatiner-explore-btn-drinks'>
         <button
-          className="explore-btn explore-drinks"
+          className="explore-btn"
           type="button"
           data-testid="explore-drinks"
           onClick={ () => {

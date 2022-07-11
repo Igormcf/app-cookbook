@@ -1,28 +1,109 @@
-/* 
-.ingredient-card {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 70px;
-  text-align: center;
+:root {
+
+  --azul-claro: #f3fbfb;
+
+  --azul: #bae8e8;
+
+  --amarelo: #ffd803;
+
+  --preto: #272343;
 }
 
-.ingredient {
-  color: #f2a922;
-  margin: 20px;
-  width: 30%;
+/* Para desktops / telas grandes */
+@media only screen and (min-width: 1025px)
+{
+  .main-ingredient-cards {
+    background: var(--preto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    min-height: 90vh;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  
+  .ingredient-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .ingredient-card p {
+    font-size: 2.5em;
+    color: var(--amarelo);
+  }
+  
+  .ingredient-img {
+    width: 14em;
+  }
+  
+  .eWjCzc {
+    color: var(--amarelo) !important;
+    background-color: var(--preto) !important;
+    border: 2px solid var(--amarelo) !important;
+  }
 }
 
-.ingredient-img {
-  background-image: linear-gradient(#3c735f, #f2cb05);
-  border-radius: 30%;
-  height: 130px;
-  width: 130px;
+/* Para telas pequena / laptops */
+@media only screen and (max-width: 1024px){
+  .main-ingredient-cards {
+    background: var(--preto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    min-height: 90vh;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  
+  .ingredient-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .ingredient-card p {
+    font-size: 1.8em;
+    color: var(--amarelo);
+  }
+  
+  .ingredient-img {
+    width: 12em;
+  }
+  
+  .eWjCzc {
+    color: var(--amarelo) !important;
+    background-color: var(--preto) !important;
+    border: 2px solid var(--amarelo) !important;
+  }
 }
 
-.explore-main {
-  background-image: url(https://thumbs.dreamstime.com/z/colourful-various-herbs-spices-cooking-dark-background-herbs-spices-cooking-dark-background-113655482.jpg);
-  height: 100%;
+/* Para Tablet */
+@media only screen and (max-width: 768px)
+{
+  .ingredient-card p {
+    font-size: 1.5em;
+  }
+
+  .ingredient-img {
+    width: 11em;
+  }
 }
- */
+
+/* Para mobile */
+@media only screen and (max-width: 600px)
+{
+  .ingredient-card p {
+    font-size: 1.4em;
+  }
+
+  .ingredient-img {
+    width: 10em;
+  }
+}

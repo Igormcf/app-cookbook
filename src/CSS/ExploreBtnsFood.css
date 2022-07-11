@@ -1,0 +1,224 @@
+:root {
+
+  --azul-claro: #f3fbfb;
+
+  --azul: #bae8e8;
+
+  --amarelo: #ffd803;
+
+  --preto: #272343;
+}
+
+.main-explore-btn-foods {
+  background: var(--preto);
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3em;
+}
+
+/* Para desktops / telas grandes */
+@media only screen and (min-width: 1025px)
+{
+  /* From uiverse.io by @kleenpulse */
+  .explore-btn-foods {
+    --border-color: linear-gradient(-45deg, #feea76, #272343, #bae8e8);
+    --border-width: .200em;
+    --curve-size: .4em;
+    --blur: 30px;
+    --bg: #272343;
+    --color: #bae8e8;
+    color: var(--color);
+      /* use position: relative; so that BG is only for .explore-btn-foods */
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    padding: .5em 1.5em;
+    font-size: 4em;
+    border: 0;
+    clip-path: polygon(
+              /* Top-left */
+              0% var(--curve-size),
+
+              var(--curve-size) 0,
+              /* top-right */
+              100% 0,
+              100% calc(100% - var(--curve-size)),
+
+              /* bottom-right 1 */
+              calc(100% - var(--curve-size)) 100%,
+              /* bottom-right 2 */
+              0 100%);
+    transition: color 250ms;
+  }
+
+  .explore-btn-foods::after,
+  .explore-btn-foods::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .explore-btn-foods::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 2s ease infinite;
+    z-index: -2;
+  }
+
+  @keyframes move-bg7234 {
+    0% {
+      background-position: 31% 0%
+    }
+
+    50% {
+      background-position: 70% 100%
+    }
+
+    100% {
+      background-position: 31% 0%
+    }
+  }
+
+  .explore-btn-foods::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+              /* Top-left */
+              var(--border-width) 
+              calc(var(--curve-size) + var(--border-width) * .5),
+
+              calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+
+              /* top-right */
+              calc(100% - var(--border-width)) 
+              var(--border-width),
+
+              calc(100% - var(--border-width)) 
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+              /* bottom-right 1 */
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+              /* bottom-right 2 */
+              var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+  }
+
+  .explore-btn-foods:active {
+      animation: gradient 2s infinite;
+      transform: scale(0.8);
+  }
+}
+
+/* Para telas pequena / laptops */
+@media only screen and (max-width: 1024px)
+{
+  /* From uiverse.io by @kleenpulse */
+  .explore-btn-foods {
+    --border-color: linear-gradient(-45deg, #feea76, #272343, #bae8e8);
+    --border-width: .200em;
+    --curve-size: .4em;
+    --blur: 30px;
+    --bg: #272343;
+    --color: #bae8e8;
+    color: var(--color);
+      /* use position: relative; so that BG is only for .explore-btn-foods */
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    padding: .5em 1.5em;
+    font-size: 3em;
+    border: 0;
+    clip-path: polygon(
+              /* Top-left */
+              0% var(--curve-size),
+
+              var(--curve-size) 0,
+              /* top-right */
+              100% 0,
+              100% calc(100% - var(--curve-size)),
+
+              /* bottom-right 1 */
+              calc(100% - var(--curve-size)) 100%,
+              /* bottom-right 2 */
+              0 100%);
+    transition: color 250ms;
+  }
+
+  .explore-btn-foods::after,
+  .explore-btn-foods::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .explore-btn-foods::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 2s ease infinite;
+    z-index: -2;
+  }
+
+  @keyframes move-bg7234 {
+    0% {
+      background-position: 31% 0%
+    }
+
+    50% {
+      background-position: 70% 100%
+    }
+
+    100% {
+      background-position: 31% 0%
+    }
+  }
+
+  .explore-btn-foods::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+              /* Top-left */
+              var(--border-width) 
+              calc(var(--curve-size) + var(--border-width) * .5),
+
+              calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+
+              /* top-right */
+              calc(100% - var(--border-width)) 
+              var(--border-width),
+
+              calc(100% - var(--border-width)) 
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+              /* bottom-right 1 */
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+              /* bottom-right 2 */
+              var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+  }
+
+  .explore-btn-foods:active {
+      animation: gradient 2s infinite;
+      transform: scale(0.8);
+  }
+}
+
+/* Para Tablet */
+@media only screen and (max-width: 768px)
+{
+  .explore-btn-foods {
+    font-size: 2em;
+  }
+}
+
+/* Para mobile */
+@media only screen and (max-width: 600px)
+{
+  .explore-btn-foods {
+    font-size: 1.8em;
+  }
+}
