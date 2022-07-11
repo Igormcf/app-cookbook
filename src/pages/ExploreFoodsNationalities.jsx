@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import '../CSS/ExploreNationalities.css';
+import topo from '../images/topo.png';
 
 function ExploreFoodsNationalities() {
   // bloco do dropdown
@@ -60,55 +62,65 @@ function ExploreFoodsNationalities() {
   }, []);
 
   return (
-    <>
-      <Header showIcon titleHeader="Explore Nationalities" />
-      <select
-        data-testid="explore-by-nationality-dropdown"
-        defaultValue="All"
-        onChange={ getRecipes }
-      >
-        <option value="All" data-testid="All-option">All</option>
-        { nationalities ? (
-          nationalities.map((nationality, index) => (
-            <option
-              value={ nationality.strArea }
-              key={ index }
-              data-testid={ `${nationality.strArea}-option` }
-
-            >
-
-              { nationality.strArea }
-
-            </option>
-          ))
-        ) : undefined }
-      </select>
-      <div>
-        { recipes ? (
-          recipes.map((recipe, index) => (
-            <Link
-              to={ `/foods/${recipe.idMeal}` }
-              key={ recipe.idMeal }
-            >
-              <div
-                key={ recipe.idMeal }
-                data-testid={ `${index}-recipe-card` }
+    <div className='div-body'>
+      <header>
+        <Header showIcon titleHeader="Explore Nationalities" />
+      </header>
+      <nav className='nav-nationalities'>
+        <select
+          className='select-nationalities'
+          data-testid="explore-by-nationality-dropdown"
+          defaultValue="All"
+          onChange={ getRecipes }
+        >
+          <option value="All" data-testid="All-option">All</option>
+          { nationalities ? (
+            nationalities.map((nationality, index) => (
+              <option
+                value={ nationality.strArea }
+                key={ index }
+                data-testid={ `${nationality.strArea}-option` }
 
               >
+
+                { nationality.strArea }
+
+              </option>
+            ))
+          ) : undefined }
+        </select>
+      </nav>
+      <main className='main-nationalities'>
+        { recipes ? (
+          recipes.map((recipe, index) => (
+            <div className='div-card' key={ recipe.idMeal }>
+              <Link
+                to={ `/foods/${recipe.idMeal}` }
+                key={ recipe.idMeal }
+              >
                 <img
+                  className='img-recipe'
                   src={ recipe.strMealThumb }
                   alt={ recipe.strMeal }
                   data-testid={ `${index}-card-img` }
                 />
-                <p data-testid={ `${index}-card-name` }>{ recipe.strMeal }</p>
-
-              </div>
-            </Link>
+                <div className='div-p'>
+                  <p data-testid={ `${index}-card-name` }>{ recipe.strMeal }</p>
+                </div>
+              </Link>
+            </div>
           ))
         ) : undefined }
-      </div>
-      <Footer />
-    </>
+      </main>
+      <section className='section-a'>
+        <a href='#container-header'>
+          <img src={ topo } alt='seta para cima' className='seta-img'/>
+        </a>
+      </section>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   );
 }
 
