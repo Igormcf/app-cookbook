@@ -3,7 +3,15 @@ import { useHistory, Link } from 'react-router-dom';
 import Context from '../Context/Context';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Carousel from 'react-elastic-carousel';
 import '../CSS/ExplorePages.css';
+
+const breakPoints = [
+  { width: 600, itemsToShow: 1 },
+  { width: 600, itemsToShow: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1024, itemsToShow: 4 }
+];
 
 function ExploreFoodsIngredients() {
   const { ingredientsList, setIngredientsList,
@@ -39,41 +47,46 @@ function ExploreFoodsIngredients() {
 
   return (
     <div>
-      <Header showIcon={ false } titleHeader="Explore Ingredients" />
-      <div
-        className="ingredient-card"
+      <headedr>
+        <Header showIcon={ false } titleHeader="Explore Ingredients" />
+      </headedr>
+      <main
+        className="main-ingredient-cards"
       >
         { ingredientsList ? (
-          ingredientsList.map((ingredient, index) => (
-            <div
-              className="ingredient"
-              key={ ingredient.idIngredient }
-            >
-              <Link
-                className="link-to-ingredient"
-                to="/foods"
-                onClick={ () => {
-                  setNewFilter(ingredient.strIngredient);
-                } }
+          <Carousel breakPoints={ breakPoints }>
+            {ingredientsList.map((ingredient, index) => (
+              <div
+                className="ingredient-card"
+                key={ ingredient.idIngredient }
               >
-                <div
-                  data-testid={ `${index}-ingredient-card` }
+                <Link
+                  className="link-to-ingredient"
+                  to="/foods"
+                  onClick={ () => {
+                    setNewFilter(ingredient.strIngredient);
+                  } }
                 >
-                  <img
-                    className="ingredient-img"
-                    src={ `https://www.themealdb.com/images/ingredients/${ingredientsList[index].strIngredient}-Small.png` }
-                    alt={ ingredient.strIngredient }
-                    data-testid={ `${index}-card-img` }
-                  />
-                </div>
-              </Link>
-              <p data-testid={ `${index}-card-name` }>{ ingredient.strIngredient }</p>
-            </div>
-
-          ))
+                  <div
+                    data-testid={ `${index}-ingredient-card` }
+                  >
+                    <img
+                      className="ingredient-img"
+                      src={ `https://www.themealdb.com/images/ingredients/${ingredientsList[index].strIngredient}-Small.png` }
+                      alt={ ingredient.strIngredient }
+                      data-testid={ `${index}-card-img` }
+                    />
+                  </div>
+                </Link>
+                <p data-testid={ `${index}-card-name` }>{ ingredient.strIngredient }</p>
+              </div>
+            ))}
+          </Carousel>
         ) : undefined }
-      </div>
-      <Footer />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

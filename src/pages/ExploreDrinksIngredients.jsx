@@ -3,6 +3,15 @@ import { useHistory, Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Context from '../Context/Context';
+import Carousel from 'react-elastic-carousel';
+import '../CSS/ExplorePages.css';
+
+const breakPoints = [
+  { width: 600, itemsToShow: 1 },
+  { width: 600, itemsToShow: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1024, itemsToShow: 4 }
+];
 
 function ExploreDrinksIngredients() {
   const [ingredients, setIngredients] = useState();
@@ -41,30 +50,43 @@ function ExploreDrinksIngredients() {
   };
 
   return (
-    <>
-      <Header showIcon={ false } titleHeader="Explore Ingredients" />
-      { ingredients ? (
-        ingredients.map((ingredient, index) => (
-          <Link
-            to="/foods"
-            key={ ingredient.strIngredient1 }
-            onClick={ () => { setNewFilter(ingredient.strIngredient1); } }
-          >
-            <div
-              data-testid={ `${index}-ingredient-card` }
-            >
-              <img
-                src={ `https://www.thecocktaildb.com/images/ingredients/${ingredients[index].strIngredient1}-Small.png` }
-                alt={ ingredient.strIngredient1 }
-                data-testid={ `${index}-card-img` }
-              />
-              <p data-testid={ `${index}-card-name` }>{ ingredient.strIngredient1 }</p>
-            </div>
-          </Link>
-        ))
-      ) : undefined }
-      <Footer />
-    </>
+    <div>
+      <header>
+        <Header showIcon={ false } titleHeader="Explore Ingredients" />
+      </header>
+      <main className="main-ingredient-cards">
+        { ingredients ? (
+          <Carousel breakPoints={ breakPoints }>
+            {ingredients.map((ingredient, index) => (
+              <div
+                className="ingredient-card"
+                key={ ingredient.strIngredient1 }
+              >
+                <Link
+                  to="/foods"
+                  onClick={ () => { setNewFilter(ingredient.strIngredient1); } }
+                >
+                  <div
+                    data-testid={ `${index}-ingredient-card` }
+                  >
+                    <img
+                      className="ingredient-img"
+                      src={ `https://www.thecocktaildb.com/images/ingredients/${ingredients[index].strIngredient1}-Small.png` }
+                      alt={ ingredient.strIngredient1 }
+                      data-testid={ `${index}-card-img` }
+                    />
+                  </div>
+                </Link>
+                <p data-testid={ `${index}-card-name` }>{ ingredient.strIngredient1 }</p>
+              </div>
+            ))}
+          </Carousel>
+        ) : undefined }
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   );
 }
 
