@@ -1,0 +1,52 @@
+:root {
+
+  --azul-claro: #f3fbfb;
+
+  --azul: #bae8e8;
+
+  --amarelo: #ffd803;
+
+  --preto: #272343;
+}
+
+.nav-nationalities {
+  background: var(--azul-claro);
+  padding: .6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-nationalities {
+  width: 38%;
+  height: 2em;
+  font-size: 1.4em;
+  text-align: center;
+  border: 3px solid var(--amarelo);
+  border-radius: 8px;
+  background-color: #272343;
+  color: #ffd803;
+}
+
+.main-nationalities {
+  background: var(--azul-claro);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7em;
+  padding-top: 2em;
+}
+
+.div-body {
+  margin: 0 0 90px;
+}
+
+.section-a {
+  background: var(--azul-claro);
+}
+
+.section-a img:active {
+  animation: gradient 2s infinite;
+  transform: scale(0.8);
+}
