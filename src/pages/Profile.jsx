@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import '../CSS/Profile.css';
 import checkIcon from '../images/checkIcon.svg';
 import favIcon from '../images/favIcon.svg';
-import logoutIcon from '../images/logoutIcon.svg';
+import logoutIcon from '../images/logoutIcon.png';
 
 function Profile() {
   const [getEmail, setEmail] = useState('');
@@ -27,68 +27,59 @@ function Profile() {
 
   return (
     <>
-      <Header showIcon={ false } titleHeader="Profile" />
-      <h2
-        data-testid="profile-email"
-        className="email"
-      >
-        { getEmail.email }
-      </h2>
-      <div className="container">
-        <Link
-          to="/done-recipes"
-        >
-          <button
-            className="done-btn"
-            type="button"
-            data-testid="profile-done-btn"
+      <Header showIcon={ false } titleHeader="Profile" className="header-profile"/>
+      <main className='main-profile'>
+        <div className='div-email-profile'>
+          <h2
+            data-testid="profile-email"
+            className="email"
           >
-            Done Recipes
-            <img
-              className="check-icon"
-              src={ checkIcon }
-              alt="checkIcon"
-            />
-
-          </button>
-
-        </Link>
+            { getEmail.email }
+          </h2>
+        </div>
         <Link
-          to="/favorite-recipes"
-        >
-          <button
-            className="fav-btn"
-            type="button"
-            data-testid="profile-favorite-btn"
+            to="/done-recipes"
           >
-            Favorite Recipes
-            <img
-              className="fav-icon"
-              src={ favIcon }
-              alt="favIcon"
-            />
-          </button>
-        </Link>
-      </div>
-      <Link
-        to="/"
-      >
-        <div className="logout-btn">
+            <button
+              className="done-btn"
+              type="button"
+              data-testid="profile-done-btn"
+            >
+              Done Recipes
+              <img
+                className="check-icon"
+                src={ checkIcon }
+                alt="checkIcon"
+              />
+            </button>
+          </Link>
+          
+          <Link
+            to="/favorite-recipes"
+          >
+            <button
+              className="fav-btn"
+              type="button"
+              data-testid="profile-favorite-btn"
+            >
+              Favorite Recipes
+              <img
+                className="fav-icon"
+                src={ favIcon }
+                alt="favIcon"
+              />
+            </button>
+          </Link>
+  
+        <div className='div-logout-btn'>
           <img
             src={ logoutIcon }
             alt="logoutIcon"
-          />
-          <button
-            className="logout-icon"
-            type="button"
-            data-testid="profile-logout-btn"
             onClick={ handleClick }
-          >
-            Logout
-          </button>
+            className='logout-btn'
+          />
         </div>
-      </Link>
-
+      </main>
       <Footer />
     </>
   );

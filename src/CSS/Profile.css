@@ -1,62 +1,476 @@
-.done-btn {
-    width: 150px;
-    height: 250px;
-    border: solid black;
-    border-radius: 35px;
-    background: linear-gradient(0deg, rgb(206, 172, 78) 0%, rgba(253,187,45,1) 100%);
-    margin: 20px;
+:root {
+
+    --azul-claro: #f3fbfb;
+  
+    --azul: #bae8e8;
+  
+    --amarelo: #ffd803;
+  
+    --preto: #272343;
+  
+    --shadow-color: 248deg 46% 6%;
+  
+    --shadow-elevation-medium:
+      0.4px 0.4px 0.4px hsl(var(--shadow-color) / 1),
+      10.3px 10.1px 10.8px -5px hsl(var(--shadow-color) / 1);
 }
 
-.done-btn:hover .check-icon {
-    display: flex;
+.main-profile {
+   min-height: 90vh;
+   background-color: var(--preto);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 3em;
 }
 
-.fav-btn {
-    width: 150px;
-    height: 250px;
-    border: solid black;
-    border-radius: 35px;
-    background: linear-gradient(0deg, rgb(206, 172, 78) 0%, rgba(253,187,45,1) 100%);
-    margin: 20px;
-}
-
-.check-icon {
-    width: 50px;
-    height: 50px;
-    margin-left: 40px;
-    margin-top: 30px;
-    display: none;
-}
-
-.fav-icon {
-    width: 50px;
-    height: 50px;
-    margin-left: 40px;
-    margin-top: 30px;
-    display: none;
-}
-
-.fav-btn:hover .fav-icon {
-    display: flex;
-}
-
-
-.logout-btn {
-    width: 75px;
-    height: 75px;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.logout-icon {
-    display: none;
-}
-
-.container {
-    justify-content: center;
-}
-
-.email {
-    text-align: center;
+/* Para desktops / telas grandes */
+@media only screen and (min-width: 1025px)
+{
+  .email {
+    color: var(--amarelo);
+    font-size: 4em;
+    margin-top: -1em;
   }
+
+  .check-icon {
+    width: 2em;
+    margin-left: 1.5em;
+  }
+
+  .fav-icon {
+    width: 1.7em;
+    margin-left: 1.1em;
+  }
+
+/* done-btn */
+
+  .done-btn {
+    --border-color: linear-gradient(-45deg, #00FD48, #272343, #00FD48);
+    --border-width: .200em;
+    --curve-size: .4em;
+    --blur: 30px;
+    --bg: #272343;
+    --color: #00FD48;
+    color: var(--color);
+        /* use position: relative; so that BG is only for .done-btn */
+    position: relative;
+    isolation: isolate;
+    place-content: center;
+    padding: 1em;
+    font-size: 2.2em;
+    border: 0;
+    width: 14em;
+    clip-path: polygon(
+                /* Top-left */
+                0% var(--curve-size),
+
+                var(--curve-size) 0,
+                /* top-right */
+                100% 0,
+                100% calc(100% - var(--curve-size)),
+
+                /* bottom-right 1 */
+                calc(100% - var(--curve-size)) 100%,
+                /* bottom-right 2 */
+                0 100%);
+    transition: color 250ms;
+    }
+
+    .done-btn::after,
+    .done-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    }
+
+    .done-btn::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 2s ease infinite;
+    z-index: -2;
+    }
+
+    @keyframes move-bg7234 {
+    0% {
+        background-position: 31% 0%
+    }
+
+    50% {
+        background-position: 70% 100%
+    }
+
+    100% {
+        background-position: 31% 0%
+    }
+    }
+
+    .done-btn::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+                /* Top-left */
+                var(--border-width) 
+                calc(var(--curve-size) + var(--border-width) * .5),
+
+                calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+
+                /* top-right */
+                calc(100% - var(--border-width)) 
+                var(--border-width),
+
+                calc(100% - var(--border-width)) 
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+                /* bottom-right 1 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+                /* bottom-right 2 */
+                var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+    }
+
+    .done-btn:active {
+        animation: gradient 2s infinite;
+        transform: scale(0.8);
+    }
+
+    /* fav-btn */
+    .fav-btn {
+    --border-color: linear-gradient(-45deg, #ff4757, #272343, #ff4757);
+    --border-width: .200em;
+    --curve-size: .4em;
+    --blur: 30px;
+    --bg: #272343;
+    --color: #ff4757;
+    color: var(--color);
+        /* use position: relative; so that BG is only for .fav-btn */
+    position: relative;
+    isolation: isolate;
+    place-content: center;
+    padding: 1em;
+    font-size: 2.2em;
+    border: 0;
+    width: 14em;
+    clip-path: polygon(
+                /* Top-left */
+                0% var(--curve-size),
+
+                var(--curve-size) 0,
+                /* top-right */
+                100% 0,
+                100% calc(100% - var(--curve-size)),
+
+                /* bottom-right 1 */
+                calc(100% - var(--curve-size)) 100%,
+                /* bottom-right 2 */
+                0 100%);
+    transition: color 250ms;
+    }
+
+    .fav-btn::after,
+    .fav-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    }
+
+    .fav-btn::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 2s ease infinite;
+    z-index: -2;
+    }
+
+    @keyframes move-bg7234 {
+    0% {
+        background-position: 31% 0%
+    }
+
+    50% {
+        background-position: 70% 100%
+    }
+
+    100% {
+        background-position: 31% 0%
+    }
+    }
+
+    .fav-btn::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+                /* Top-left */
+                var(--border-width) 
+                calc(var(--curve-size) + var(--border-width) * .5),
+
+                calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+
+                /* top-right */
+                calc(100% - var(--border-width)) 
+                var(--border-width),
+
+                calc(100% - var(--border-width)) 
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+                /* bottom-right 1 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+                /* bottom-right 2 */
+                var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+  }
+
+  .fav-btn:active {
+      animation: gradient 2s infinite;
+      transform: scale(0.8);
+  }
+
+  .div-logout-btn {
+      margin-top: 2.5em;
+  }
+}
+
+/* Para telas pequena / laptops */
+@media only screen and (max-width: 1024px)
+{
+  .email {
+    color: var(--amarelo);
+    font-size: 4em;
+    margin-top: -1em;
+  }
+
+  .check-icon {
+    width: 2em;
+    margin-left: 1.5em;
+  }
+
+  .fav-icon {
+    width: 1.7em;
+    margin-left: 1.1em;
+  }
+
+/* done-btn */
+
+  .done-btn {
+    --border-color: linear-gradient(-45deg, #00FD48, #272343, #00FD48);
+    --border-width: .200em;
+    --curve-size: .4em;
+    --blur: 30px;
+    --bg: #272343;
+    --color: #00FD48;
+    color: var(--color);
+        /* use position: relative; so that BG is only for .done-btn */
+    position: relative;
+    isolation: isolate;
+    place-content: center;
+    padding: 1em;
+    font-size: 2.2em;
+    border: 0;
+    width: 14em;
+    clip-path: polygon(
+                /* Top-left */
+                0% var(--curve-size),
+
+                var(--curve-size) 0,
+                /* top-right */
+                100% 0,
+                100% calc(100% - var(--curve-size)),
+
+                /* bottom-right 1 */
+                calc(100% - var(--curve-size)) 100%,
+                /* bottom-right 2 */
+                0 100%);
+    transition: color 250ms;
+    }
+
+    .done-btn::after,
+    .done-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    }
+
+    .done-btn::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 2s ease infinite;
+    z-index: -2;
+    }
+
+    @keyframes move-bg7234 {
+    0% {
+        background-position: 31% 0%
+    }
+
+    50% {
+        background-position: 70% 100%
+    }
+
+    100% {
+        background-position: 31% 0%
+    }
+    }
+
+    .done-btn::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+                /* Top-left */
+                var(--border-width) 
+                calc(var(--curve-size) + var(--border-width) * .5),
+
+                calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+
+                /* top-right */
+                calc(100% - var(--border-width)) 
+                var(--border-width),
+
+                calc(100% - var(--border-width)) 
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+                /* bottom-right 1 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+                /* bottom-right 2 */
+                var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+    }
+
+    .done-btn:active {
+        animation: gradient 2s infinite;
+        transform: scale(0.8);
+    }
+
+    /* fav-btn */
+    .fav-btn {
+    --border-color: linear-gradient(-45deg, #ff4757, #272343, #ff4757);
+    --border-width: .200em;
+    --curve-size: .4em;
+    --blur: 30px;
+    --bg: #272343;
+    --color: #ff4757;
+    color: var(--color);
+        /* use position: relative; so that BG is only for .fav-btn */
+    position: relative;
+    isolation: isolate;
+    place-content: center;
+    padding: 1em;
+    font-size: 2.2em;
+    border: 0;
+    width: 14em;
+    clip-path: polygon(
+                /* Top-left */
+                0% var(--curve-size),
+
+                var(--curve-size) 0,
+                /* top-right */
+                100% 0,
+                100% calc(100% - var(--curve-size)),
+
+                /* bottom-right 1 */
+                calc(100% - var(--curve-size)) 100%,
+                /* bottom-right 2 */
+                0 100%);
+    transition: color 250ms;
+    }
+
+    .fav-btn::after,
+    .fav-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    }
+
+    .fav-btn::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 2s ease infinite;
+    z-index: -2;
+    }
+
+    @keyframes move-bg7234 {
+    0% {
+        background-position: 31% 0%
+    }
+
+    50% {
+        background-position: 70% 100%
+    }
+
+    100% {
+        background-position: 31% 0%
+    }
+    }
+
+    .fav-btn::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+                /* Top-left */
+                var(--border-width) 
+                calc(var(--curve-size) + var(--border-width) * .5),
+
+                calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+
+                /* top-right */
+                calc(100% - var(--border-width)) 
+                var(--border-width),
+
+                calc(100% - var(--border-width)) 
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+                /* bottom-right 1 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+                /* bottom-right 2 */
+                var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+  }
+
+  .fav-btn:active {
+      animation: gradient 2s infinite;
+      transform: scale(0.8);
+  }
+
+  .div-logout-btn {
+      margin-top: 2.5em;
+  }
+}
+
+/* Para Tablet */
+@media only screen and (max-width: 768px)
+{
+  .email {
+    font-size: 3em;
+  }
+
+  .done-btn, .fav-btn {
+    font-size: 2em;
+    width: 12em;
+  }
+
+  .check-icon {
+    width: 1.8em;
+    margin-left: 1.8em;
+  }
+
+  .fav-icon {
+    width: 1.5em;
+    margin-left: 1em;
+  }
+
+  .logout-btn {
+    width: 54px;
+  }
+}
+
+/* Para mobile */
+@media only screen and (max-width: 600px)
+{
+  .email {
+    font-size: 2.5em;
+  }
+
+  .done-btn, .fav-btn {
+    font-size: 1.5em;
+    width: 12em;
+  }
+}
