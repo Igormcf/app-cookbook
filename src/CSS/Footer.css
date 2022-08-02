@@ -24,6 +24,14 @@
     padding-left: 2em;
     padding-right: 2em;
   }
+
+  .footer-icon-explore {
+    width: 2.5em;
+  }
+
+  .footer-icon {
+    width: 3em;
+  }
 }
 
 /* Para telas pequena / laptops */
@@ -37,11 +45,14 @@
     position: fixed;
     width: 100%;
     background-color: var(--preto);
-    padding: 0.5em;
+  }
+
+  .footer-icon-explore {
+    width: 2.5em;
   }
 
   .footer-icon {
-    width: 3em;
+    width: 2.8em;
   }
 }
 
@@ -76,6 +87,10 @@
     width: 100%;
     background-color: var(--preto);
     padding: 0.3em;
+  }
+
+  .footer-icon-explore {
+    width: 2em;
   }
 
   .footer-icon {
