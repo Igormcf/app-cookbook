@@ -136,7 +136,6 @@ function ProgressFood() {
   return (
     foodProgress ? (
       <>
-        <Header titleHeader='In Progress'/>
         <main className='main-in-progress'>
           <section className='section-info-recipe-progress'>
             <div className='div-info-recipe-progress'>
@@ -203,7 +202,6 @@ function ProgressFood() {
             </button>
           </Link>
         </main>
-        <Footer/>
       </>
     ) : (<Loading />)
   );
