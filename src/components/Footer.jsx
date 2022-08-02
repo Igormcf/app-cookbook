@@ -17,7 +17,7 @@ function Footer() {
       </a>
       <a href="/explore">
         <img
-          className="footer-icon"
+          className="footer-icon-explore"
           data-testid="explore-bottom-btn"
           src={ ExploreIcon }
           alt="EXploreIcon"
