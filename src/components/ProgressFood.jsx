@@ -5,6 +5,9 @@ import ListFood from './ListFood';
 import ShareIcon from '../images/shareIcon.png';
 import WhiteHeartIcon from '../images/whiteHeartIcon.png';
 import BlackHeartIcon from '../images/blackHeartIcon.png';
+import Header from './Header';
+import Footer from './Footer';
+import Loading from './Loading';
 
 import Context from '../Context/Context';
 
@@ -132,63 +135,77 @@ function ProgressFood() {
 
   return (
     foodProgress ? (
-      <main>
-        <img
-          data-testid="recipe-photo"
-          className="imgFood"
-          src={ foodProgress.strMealThumb }
-          alt="food"
-        />
+      <>
+        <Header titleHeader='In Progress'/>
+        <main className='main-in-progress'>
+          <section className='section-info-recipe-progress'>
+            <div className='div-info-recipe-progress'>
+              <img
+                data-testid="recipe-photo"
+                className="imgFood"
+                src={ foodProgress.strMealThumb }
+                alt="food"
+              />
 
-        <h1 data-testid="recipe-title">{foodProgress.strMeal}</h1>
+              <h1 data-testid="recipe-title">{foodProgress.strMeal}</h1>
 
-        <button
-          data-testid="share-btn"
-          type="button"
-          onClick={ () => { copyFunc(`http://localhost:3000/foods/${id[2]}`); } }
-        >
-          <img src={ ShareIcon } alt="share-btn" />
-        </button>
+              <div className='btn-recipe-progress'>
+                <button
+                  data-testid="share-btn"
+                  type="button"
+                  onClick={ () => { copyFunc(`http://localhost:3000/foods/${id[2]}`); } }
+                >
+                  <img src={ ShareIcon } alt="share-btn" />
+                </button>
 
-        <button
-          type="button"
-          onClick={ favButton }
-        >
-          <img
-            data-testid="favorite-btn"
-            src={ favStatus ? BlackHeartIcon : WhiteHeartIcon }
-            alt="fav-icon"
-          />
-        </button>
+                <button
+                  type="button"
+                  onClick={ favButton }
+                >
+                  <img
+                    data-testid="favorite-btn"
+                    src={ favStatus ? BlackHeartIcon : WhiteHeartIcon }
+                    alt="fav-icon"
+                  />
+                </button>
+              </div>
 
-        { copied ? <p>Link copied!</p> : undefined}
+              { copied ? <p>Link copied!</p> : undefined}
 
-        <h3 data-testid="recipe-category">{foodProgress.strCategory}</h3>
+              <h3 data-testid="recipe-category">{foodProgress.strCategory}</h3>
+            </div>
 
-        <h5>Ingredients</h5>
+            <div className='div-ingredients-progress'>
+              <h2>Ingredients</h2>
 
-        <ul>
-          {renderIngredients()}
-        </ul>
+              <ul>
+                {renderIngredients()}
+              </ul>
+            </div>
+          </section>
 
-        <h3>instructions</h3>
+          <div className='div-instructions-progress'>
+            <h2>Instructions</h2>
 
-        <p data-testid="instructions">
-          {foodProgress.strInstructions}
-        </p>
-
-        <Link to="/done-recipes">
-          <button
-            data-testid="finish-recipe-btn"
-            type="button"
-            disabled={ !finishBtnDisabled }
-            onClick={ () => { SetLocalDoneRecipes(doneLocal()); } }
-          >
-            Finish Recipe
-          </button>
-        </Link>
-      </main>
-    ) : (<p>Loading</p>)
+            <p data-testid="instructions">
+              {foodProgress.strInstructions}
+            </p>
+          </div>
+          <Link to="/done-recipes">
+            <button
+              data-testid="finish-recipe-btn"
+              type="button"
+              disabled={ !finishBtnDisabled }
+              onClick={ () => { SetLocalDoneRecipes(doneLocal()); } }
+              className='finish-recipe-btn'
+            >
+              Finish Recipe
+            </button>
+          </Link>
+        </main>
+        <Footer/>
+      </>
+    ) : (<Loading />)
   );
 }
 

@@ -79,7 +79,7 @@ function ListFood({ index, value, isChecked }) {
           } }
           checked={ verific }
         />
-        <p>{ `${value[0]}: ${value[1]}` }</p>
+        {value[0]}: {value[1]}
       </li>
     </label>
   );

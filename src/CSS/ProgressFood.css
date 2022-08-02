@@ -1,12 +1,101 @@
-p {
-  cursor: default;
-  text-decoration: none;
+:root {
+
+  --azul-claro: #f3fbfb;
+
+  --azul: #bae8e8;
+
+  --amarelo: #ffd803;
+
+  --preto: #272343;
 }
 
-input:checked ~ p {
-  text-decoration: line-through;
+
+.main-in-progress {
+  padding: 2em;
+  margin-top: -1em;
+  margin-bottom: 5em;
+  background-color: var(--azul-claro);
 }
 
-.doneIngredients {
-  text-decoration: line-through;
+.div-info-recipe-progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-ingredients-progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 40vh;
+  margin-top: 1em;
+}
+
+.div-ingredients-progress li {
+  margin-right: 2em;
+  font-size: 1.5em;
+  list-style-type: none;
+}
+
+.ingredientProgress input {
+  margin-right: 1em;
+}
+
+.section-info-recipe-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10em;
+  margin-bottom: 2.5em;
+}
+
+.btn-recipe-progress button {
+  border: none;
+  background: none;
+}
+
+.btn-recipe-progress img {
+  width: 2.6em;
+}
+
+.btn-recipe-progress {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.div-instructions-progress {
+  font-size: 1.3em;
+  text-align: justify;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h2 {
+  font-weight: 900;
+  margin-bottom: 1em;
+}
+
+.finish-recipe-btn {
+  width: 14em;
+  height: 2.5em;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 900;
+  border: 2px solid var(--amarelo);
+  color: var(--amarelo);
+  background: var(--preto);
+  box-shadow: var(--shadow-elevation-medium);
+  transition: transform 100ms, box-shadow 100ms;
+}
+
+.finish-recipe-btn:focus {
+  border: 2px solid var(--azul-claro);
+  color: var(--azul-claro);
+  transform: translateY(4px) translateX(4px);
+  box-shadow: var(--preto) 0px 0px 0px;
 }
