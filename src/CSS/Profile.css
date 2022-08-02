@@ -1,18 +1,12 @@
 :root {
 
-    --azul-claro: #f3fbfb;
-  
-    --azul: #bae8e8;
-  
-    --amarelo: #ffd803;
-  
-    --preto: #272343;
-  
-    --shadow-color: 248deg 46% 6%;
-  
-    --shadow-elevation-medium:
-      0.4px 0.4px 0.4px hsl(var(--shadow-color) / 1),
-      10.3px 10.1px 10.8px -5px hsl(var(--shadow-color) / 1);
+  --azul-claro: #f3fbfb;
+
+  --azul: #bae8e8;
+
+  --amarelo: #ffd803;
+
+  --preto: #272343;
 }
 
 .main-profile {

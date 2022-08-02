@@ -5,6 +5,7 @@ import ListDrink from './ListDrink';
 import ShareIcon from '../images/shareIcon.png';
 import WhiteHeartIcon from '../images/whiteHeartIcon.png';
 import BlackHeartIcon from '../images/blackHeartIcon.png';
+import Loading from './Loading';
 
 import Context from '../Context/Context';
 
@@ -185,7 +186,7 @@ function ProgressDrink() {
           </button>
         </Link>
       </main>
-    ) : (<p>Loading</p>)
+    ) : (<Loading />)
   );
 }
 

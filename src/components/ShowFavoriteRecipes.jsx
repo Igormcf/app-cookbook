@@ -5,6 +5,7 @@ import WhiteHeartIcon from '../images/whiteHeartIcon.png';
 import BlackHeartIcon from '../images/blackHeartIcon.png';
 import '../CSS/DoneRecipes.css';
 import { deleteLocalFav } from '../Helpers';
+import Loading from './Loading';
 
 function ShowFavoriteRecipes() {
   const [copied, setCopied] = useState(false);
@@ -165,7 +166,7 @@ function ShowFavoriteRecipes() {
       <main>
         { all ? (
           renderLocalDone()
-        ) : <p>Loading</p> }
+        ) : <Loading /> }
       </main>
     </>
   );

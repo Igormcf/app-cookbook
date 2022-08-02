@@ -196,7 +196,7 @@ html {
     transition: transform 100ms, box-shadow 100ms;
   }
 
-  .footer-detailFood button:active {
+  .footer-detailFood button:focus {
     border: 2px solid var(--azul-claro);
     color: var(--azul-claro);
     transform: translateY(4px) translateX(4px);
