@@ -22,6 +22,43 @@
   gap: 1.8em;
 }
 
+.main-notfood {
+  min-height: 100vh;
+  margin-top: -1em;
+  background-color: var(--preto);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-notfood img {
+  width: 30em;
+}
+
+/* Para desktops / telas grandes */
+@media only screen and (min-width: 1025px)
+{
+  .main-notfood img {
+    width: 30em;
+  }
+}
+
+/* Para telas pequena / laptops */
+@media only screen and (max-width: 1024px)
+{
+  .main-notfood img {
+    width: 20em;
+  }
+}
+
+/* Para Tablet */
+@media only screen and (max-width: 768px)
+{
+  .main-notfood img {
+    width: 18em;
+  }
+}
+
 /* Para mobile */
 @media only screen and (max-width: 600px)
 {
@@ -31,5 +68,9 @@
 
   h4, h5 {
     font-size: 1.3em !important;
+  }
+
+  .main-notfood img {
+    width: 15em;
   }
 }
