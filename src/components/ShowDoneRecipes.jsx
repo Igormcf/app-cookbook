@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ShareIcon from '../images/shareIcon.png';
-import '../CSS/DoneRecipes.css';
 import Loading from './Loading';
 
 function ShowDoneRecipes() {

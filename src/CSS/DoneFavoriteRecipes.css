@@ -1,0 +1,35 @@
+:root {
+
+  --azul-claro: #f3fbfb;
+
+  --azul: #bae8e8;
+
+  --amarelo: #ffd803;
+
+  --preto: #272343;
+
+  --shadow-color: 248deg 46% 6%;
+
+}
+
+.main-doneFavorite-recipes {
+  background-color: var(--azul-claro);
+  margin-top: -1em;
+}
+
+.div-donefavorite-recipe {
+  display: flex;
+  gap: 1.8em;
+}
+
+/* Para mobile */
+@media only screen and (max-width: 600px)
+{
+  .div-donefavorite-recipe img {
+    width: 10em;
+  }
+
+  h4, h5 {
+    font-size: 1.3em !important;
+  }
+}

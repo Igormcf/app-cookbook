@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import ShareIcon from '../images/shareIcon.png';
 import WhiteHeartIcon from '../images/whiteHeartIcon.png';
 import BlackHeartIcon from '../images/blackHeartIcon.png';
-import '../CSS/DoneRecipes.css';
 import { deleteLocalFav } from '../Helpers';
 import Loading from './Loading';
+import '../CSS/DoneFavoriteRecipes.css';
 
 function ShowFavoriteRecipes() {
   const [copied, setCopied] = useState(false);
@@ -50,72 +50,74 @@ function ShowFavoriteRecipes() {
       };
 
       return (
-        <div key={ item.name } className="done">
-          <Link to={ `/${item.type}s/${item.id}` }>
-            <img
-              className="imgFood"
-              src={ item.image }
-              alt={ item.name }
-              data-testid={ `${index}-horizontal-image` }
-            />
-          </Link>
+        <div key={ item.name }>
+          <div className="div-donefavorite-recipe">
+            <Link to={ `/${item.type}s/${item.id}` }>
+              <img
+                className="imgFood"
+                src={ item.image }
+                alt={ item.name }
+                data-testid={ `${index}-horizontal-image` }
+              />
+            </Link>
 
-          <div>
-            <h4
-              data-testid={ `${index}-horizontal-top-text` }
-            >
-              { `${item.nationality} - ${item.category}` }
-            </h4>
-
-            { item.alcoholicOrNot ? (
-              <h5
+            <div className='info-donefavorite-recipes'>
+              <h4
                 data-testid={ `${index}-horizontal-top-text` }
               >
-                { item.alcoholicOrNot }
-              </h5>
-            ) : undefined }
+                { `${item.nationality} - ${item.category}` }
+              </h4>
 
-            <h4
-              data-testid={ `${index}-horizontal-name` }
-            >
-              <Link to={ `/${item.type}s/${item.id}` }>
-                { item.name }
-              </Link>
-            </h4>
+              { item.alcoholicOrNot ? (
+                <h5
+                  data-testid={ `${index}-horizontal-top-text` }
+                >
+                  { item.alcoholicOrNot }
+                </h5>
+              ) : undefined }
 
-            <h4
-              data-testid={ `${index}-horizontal-done-date` }
-            >
-              { `Done in: ${item.doneDate}` }
-            </h4>
+              <h4
+                data-testid={ `${index}-horizontal-name` }
+              >
+                <Link to={ `/${item.type}s/${item.id}` }>
+                  { item.name }
+                </Link>
+              </h4>
 
-            <button
-              type="button"
-              onClick={ () => { copyFunc(`http://localhost:3000/foods/${item.id}`); } }
-            >
-              <img
-                data-testid={ `${index}-horizontal-share-btn` }
-                src={ ShareIcon }
-                alt="share-btn"
-              />
-            </button>
+              <h4
+                data-testid={ `${index}-horizontal-done-date` }
+              >
+                { `Done in: ${item.doneDate}` }
+              </h4>
+              <div className='btn-recipe-progress'>
+                <button
+                  type="button"
+                  onClick={ () => { copyFunc(`http://localhost:3000/foods/${item.id}`); } }
+                >
+                  <img
+                    data-testid={ `${index}-horizontal-share-btn` }
+                    src={ ShareIcon }
+                    alt="share-btn"
+                  />
+                </button>
 
-            <button
-              type="button"
-              onClick={ () => favButton(item.id) }
-            >
-              <img
-                data-testid={ `${index}-horizontal-favorite-btn` }
-                src={ favStatus ? BlackHeartIcon : WhiteHeartIcon }
-                alt="fav-icon"
-              />
-            </button>
+                <button
+                  type="button"
+                  onClick={ () => favButton(item.id) }
+                >
+                  <img
+                    data-testid={ `${index}-horizontal-favorite-btn` }
+                    src={ favStatus ? BlackHeartIcon : WhiteHeartIcon }
+                    alt="fav-icon"
+                  />
+                </button>
+              </div>
 
-            { copied ? <p>Link copied!</p> : undefined}
+              { copied ? <p>Link copied!</p> : undefined}
 
-            { renderTags() }
+              { renderTags() }
+            </div>
           </div>
-
         </div>
       );
     });
@@ -134,9 +136,10 @@ function ShowFavoriteRecipes() {
   };
 
   return (
-    <>
-      <div>
+    <main className='main-doneFavorite-recipes'>
+      <section className='section-btns'>
         <button
+          className='btn-categories'
           data-testid="filter-by-all-btn"
           type="button"
           onClick={ () => {
@@ -147,6 +150,7 @@ function ShowFavoriteRecipes() {
         </button>
 
         <button
+          className='btn-categories'
           data-testid="filter-by-food-btn"
           type="button"
           onClick={ foodBtn }
@@ -155,20 +159,21 @@ function ShowFavoriteRecipes() {
         </button>
 
         <button
+          className='btn-categories'
           data-testid="filter-by-drink-btn"
           type="button"
           onClick={ drinkBtn }
         >
           Drinks
         </button>
-      </div>
+      </section>
 
-      <main>
+      <section className='div-cards'>
         { all ? (
           renderLocalDone()
         ) : <Loading /> }
-      </main>
-    </>
+      </section>
+    </main>
   );
 }
 
