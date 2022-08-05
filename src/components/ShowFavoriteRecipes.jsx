@@ -4,7 +4,7 @@ import ShareIcon from '../images/shareIcon.png';
 import WhiteHeartIcon from '../images/whiteHeartIcon.png';
 import BlackHeartIcon from '../images/blackHeartIcon.png';
 import { deleteLocalFav } from '../Helpers';
-import Loading from './Loading';
+import notFood from '../images/notFood.svg';
 import '../CSS/DoneFavoriteRecipes.css';
 
 function ShowFavoriteRecipes() {
@@ -136,44 +136,48 @@ function ShowFavoriteRecipes() {
   };
 
   return (
-    <main className='main-doneFavorite-recipes'>
-      <section className='section-btns'>
-        <button
-          className='btn-categories'
-          data-testid="filter-by-all-btn"
-          type="button"
-          onClick={ () => {
-            setAll(JSON.parse(localStorage.getItem('favoriteRecipes')));
-          } }
-        >
-          All
-        </button>
+    <>
+    { all ? (
+      <main className='main-doneFavorite-recipes'>
+        <section className='section-btns'>
+          <button
+            className='btn-categories'
+            data-testid="filter-by-all-btn"
+            type="button"
+            onClick={ () => {
+              setAll(JSON.parse(localStorage.getItem('favoriteRecipes')));
+            } }
+          >
+            All
+          </button>
 
-        <button
-          className='btn-categories'
-          data-testid="filter-by-food-btn"
-          type="button"
-          onClick={ foodBtn }
-        >
-          Food
-        </button>
+          <button
+            className='btn-categories'
+            data-testid="filter-by-food-btn"
+            type="button"
+            onClick={ foodBtn }
+          >
+            Food
+          </button>
 
-        <button
-          className='btn-categories'
-          data-testid="filter-by-drink-btn"
-          type="button"
-          onClick={ drinkBtn }
-        >
-          Drinks
-        </button>
-      </section>
+          <button
+            className='btn-categories'
+            data-testid="filter-by-drink-btn"
+            type="button"
+            onClick={ drinkBtn }
+          >
+            Drinks
+          </button>
+        </section>
 
-      <section className='div-cards'>
-        { all ? (
-          renderLocalDone()
-        ) : <Loading /> }
-      </section>
+        <section className='div-cards'>
+          { renderLocalDone() }
+        </section>
     </main>
+    ) : <main className='main-notfood'>
+      <img src={ notFood } alt='Imagem de mulher olhando um celular'/>
+    </main> } 
+    </>
   );
 }
 
