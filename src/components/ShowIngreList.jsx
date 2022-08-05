@@ -19,6 +19,7 @@ function ShowIngreList() {
         return (
           all12.map((recipe, index) => (
             <div
+              className='div-card'
               data-testid={ `${index}-recipe-card` }
               key={ recipe.strMeal }
             >
@@ -26,16 +27,18 @@ function ShowIngreList() {
                 to={ `/foods/${recipe.idMeal}` }
               >
                 <img
+                  className='img-recipe'
                   data-testid={ `${index}-card-img` }
                   src={ recipe.strMealThumb }
                   alt={ recipe.strMeal }
                 />
-
-                <p
-                  data-testid={ `${index}-card-name` }
-                >
-                  { recipe.strMeal }
-                </p>
+                <div className='div-p'>
+                  <p
+                    data-testid={ `${index}-card-name` }
+                  >
+                    { recipe.strMeal }
+                  </p>
+                </div>
               </Link>
             </div>
           ))
@@ -50,6 +53,7 @@ function ShowIngreList() {
         return (
           all12.map((recipe, index) => (
             <div
+              className='div-card'
               data-testid={ `${index}-recipe-card` }
               key={ recipe.strDrink }
             >
@@ -57,16 +61,18 @@ function ShowIngreList() {
                 to={ `/foods/${recipe.idDrink}` }
               >
                 <img
+                  className='img-recipe'
                   data-testid={ `${index}-card-img` }
                   src={ recipe.strDrinkThumb }
                   alt={ recipe.strDrink }
                 />
-
-                <p
-                  data-testid={ `${index}-card-name` }
-                >
-                  { recipe.strDrink }
-                </p>
+                <div className='div-p'>
+                  <p
+                    data-testid={ `${index}-card-name` }
+                  >
+                    { recipe.strDrink }
+                  </p>
+                </div>
               </Link>
             </div>
           ))
@@ -77,7 +83,7 @@ function ShowIngreList() {
   };
 
   return (
-    <p>{ renderFood() }</p>
+    <div className='div-cards'>{ renderFood() }</div>
   );
 }
 
