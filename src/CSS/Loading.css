@@ -34,7 +34,7 @@
 
   .loading {
     position: absolute;
-    top: 20rem;
+    top: 18rem !important;
   }
 
   .loading .squares {
