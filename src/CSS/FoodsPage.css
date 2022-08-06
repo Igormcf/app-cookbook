@@ -313,11 +313,11 @@ html {
   }
 
   .btn-categories {
-    font-size: 0.7rem;
+    font-size: 0.7em;
     font-weight: 700;
     margin-top: 5px;
     text-align: center;
-    width: 7.5em;
+    width: 8em;
     border-radius: 7px;
     border: 3px solid var(--preto);
     color: var(--preto);
