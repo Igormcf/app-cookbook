@@ -10,7 +10,7 @@
 }
 
 .main-profile {
-   min-height: 90vh;
+   min-height: 100vh;
    background-color: var(--preto);
    display: flex;
    flex-direction: column;
@@ -460,11 +460,11 @@
 @media only screen and (max-width: 600px)
 {
   .email {
-    font-size: 2.5em;
+    font-size: 2.2em;
   }
 
   .done-btn, .fav-btn {
-    font-size: 1.5em;
-    width: 12em;
+    font-size: 1.3em;
+    width: 15em;
   }
 }
