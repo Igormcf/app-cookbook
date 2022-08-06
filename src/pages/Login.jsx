@@ -31,6 +31,10 @@ function Login() {
     }, 4000);
   }
 
+  const alteraTitle = () => {
+    document.title = 'Cookbook';
+  }
+
   const validateEmail = () => (email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/));
 
   const validatePassword = () => password.length > num;
@@ -38,6 +42,7 @@ function Login() {
   return (
       !loading ? (
         <main className="main-login">
+          { alteraTitle() }
           <section className="clip" />
           <section className="section-form">
             <img src={ logo } alt="logo" className="img-logo" />
