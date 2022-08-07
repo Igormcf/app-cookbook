@@ -345,7 +345,7 @@ html {
 
   .div-card:active {
     border-radius: 0 74px 0 64px;
-    border: none;
+    border: none !important;
     box-shadow: var(--shadow-elevation-medium);
   }
 
