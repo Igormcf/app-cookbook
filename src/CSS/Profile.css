@@ -460,11 +460,11 @@
 @media only screen and (max-width: 600px)
 {
   .email {
-    font-size: 2.2em;
+    font-size: 1.5em;
   }
 
   .done-btn, .fav-btn {
     font-size: 1.3em;
-    width: 15em;
+    width: 12em;
   }
 }
