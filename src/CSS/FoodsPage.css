@@ -340,12 +340,12 @@ html {
   }
 
   .div-card {
-    max-width: 240px;
+    max-width: 280px;
   }
 
   .div-card:active {
     border-radius: 0 74px 0 64px;
-    border: 3px solid var(--preto);
+    border: none !important;
     box-shadow: var(--shadow-elevation-medium);
   }
 
