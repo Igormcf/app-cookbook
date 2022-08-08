@@ -1,6 +1,6 @@
 # App Cookbook
 
-
+![Gif star](https://github.com/Igormcf/app-cookbook/blob/main/app-cookbook.gif)
 
 ## Sobre o projeto:
 Este é um aplicativo de receitas, o qual utiliza Hooks e Context API como gerenciador de estado.
