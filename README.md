@@ -5,7 +5,7 @@
 ## Sobre o projeto:
 Este é um aplicativo de receitas, o qual utiliza Hooks e Context API como gerenciador de estado.
 Nele o usuário pode ver, buscar, filtrar, favoritar e acompanhar o progresso de preparação de receitas e drinks.
-Na base de dados, foramutilizadas 2 APIs distintas, uma para comidas e outra para bebidas. Ainda, O layout tem como foco dispositivos móveis, mas a responsividade está compatível para outros tamanhos de telas.
+Na base de dados, foram utilizadas 2 APIs distintas, uma para comidas e outra para bebidas. Ainda, O layout tem como foco dispositivos móveis, mas a responsividade está compatível para outros tamanhos de telas.
 
 ## Sobre o desenvolvimento:
 Foi utilizado no seu desenvolvimento a linguagem JavaScript com a framework do React, bem como, Context API e Hooks no gerenciamento do estado global.
