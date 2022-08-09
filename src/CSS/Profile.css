@@ -16,7 +16,7 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   gap: 3em;
+   gap: 1em;
 }
 
 /* Para desktops / telas grandes */
@@ -220,7 +220,7 @@
   }
 
   .div-logout-btn {
-      margin-top: 2.5em;
+    margin-top: 1em;
   }
 }
 
@@ -459,6 +459,14 @@
 /* Para mobile */
 @media only screen and (max-width: 600px)
 {
+  .main-profile {
+    margin-top: -5em;
+  }
+
+  .div-logout-btn {
+    margin-top: 1em;
+  }
+
   .email {
     font-size: 1.3em;
   }
