@@ -12,3 +12,4 @@ Na base de dados, foram utilizadas 2 APIs distintas, uma para comidas e outra pa
 
 Foi utilizado no seu desenvolvimento a linguagem JavaScript com a framework do React, bem como, Context API e Hooks no gerenciamento do estado global.
 Toda a parte estrutural da aplicação, bem como implementação de funcionalidades, foi desenvolvida em conjunto pela equipe, porém, a criação e desenvolvimento do layout da aplicação (CSS), como também, a responsividade para diferentes tamanhos de telas, foi implementado exclusivamente por mim.
+
