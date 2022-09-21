@@ -6,7 +6,7 @@
 
 Este é um aplicativo de receitas, o qual utiliza Hooks e Context API como gerenciador de estado.
 Nele o usuário pode ver, buscar, filtrar, favoritar e acompanhar o progresso de preparação de receitas e drinks.
-Na base de dados, foram utilizadas 2 APIs distintas, uma para comidas e outra para bebidas. Ainda, O layout tem como foco dispositivos móveis, mas a responsividade está compatível para outros tamanhos de telas.
+Na base de dados, foram utilizadas 2 APIs distintas, uma para comidas e outra para bebidas. Ainda, o layout tem como foco dispositivos móveis, mas a responsividade está compatível para outros tamanhos de telas.
 
 ## Sobre o desenvolvimento:
 
